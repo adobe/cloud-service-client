@@ -2,6 +2,8 @@
 
 [![build status](https://github.com/adobe/cloud-service-client/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/cloud-service-client/actions/workflows/node.js.yml)
 
+[![Node version](https://img.shields.io/npm/v/@adobe/cloud-service-client)](https://nodejs.org/download/)
+
 
 This client can be used to submit HTTP requests in javascript. You may ask, "why use this client instead of one of the more popular libraries?" 
 First off, it's not a rewrite of HTTP functionality for Node.JS; it's still intended for use with popular modules (like `fetch` or `axios`) for the actual HTTP handling. Think of the client more like added functionality built on top of the basic HTTP capabilities that these modules provide; these features are commonly required when communicating with a complex cloud service.
