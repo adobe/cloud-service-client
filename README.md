@@ -3,7 +3,6 @@
 [![build status](https://github.com/adobe/cloud-service-client/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/cloud-service-client/actions/workflows/node.js.yml)
 [![Node version](https://img.shields.io/npm/v/@adobe/cloud-service-client)](https://www.npmjs.com/package/@adobe/cloud-service-client/)
 
-
 This client can be used to submit HTTP requests in javascript. You may ask, "why use this client instead of one of the more popular libraries?" 
 First off, it's not a rewrite of HTTP functionality for Node.JS; it's still intended for use with popular modules (like `fetch` or `axios`) for the actual HTTP handling. Think of the client more like added functionality built on top of the basic HTTP capabilities that these modules provide; these features are commonly required when communicating with a complex cloud service.
 Here is some of this functionality:
@@ -14,6 +13,29 @@ wait exponentially longer between each attempt.
 * The client is interchangable with `axios` or `fetch`. Currently using `fetch` and need to take advantage of the client's retry functionality? Simply replace your `fetch` calls with the client; everything else (such as response format, options, etc.) will fit into place seamlessly.
 * Can be configured to handle Set-Cookie header when provided by servers. The client will store these cookies in its own jar and use them in
 subsequent requests.
+
+- [Node.JS Cloud Service Client](#nodejs-cloud-service-client)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Axios Usage](#axios-usage)
+    - [Fetch Usage](#fetch-usage)
+    - [Additional Exports](#additional-exports)
+  - [Options](#options)
+    - [Client Options](#client-options)
+    - [Request Options](#request-options)
+  - [Response](#response)
+  - [Request Retry](#request-retry)
+    - [Retry-After Header](#retry-after-header)
+    - [Example Retry Strategies](#example-retry-strategies)
+    - [Built-in Retry Strategies](#built-in-retry-strategies)
+  - [Cookies](#cookies)
+  - [Logging](#logging)
+    - [Set a Log Level](#set-a-log-level)
+    - [Provide a Custom Logger](#provide-a-custom-logger)
+  - [Examples](#examples)
+- [Releasing](#releasing)
+- [Contributing](#contributing)
+- [Licensing](#licensing)
 
 ## Installation
 
@@ -310,28 +332,33 @@ See the library's [end-to-end contract tests](./e2e/all-methods.test.js) for var
 
 # Releasing
 
-This module uses [semantic-release](https://github.com/semantic-release/semantic-release) when publishing new versions. The process is initiated upon merging commits to the `master` branch. To create a release, ensure
-that the commit message of the PR begins with one of the following values:
+This module uses [semantic-release](https://github.com/semantic-release/semantic-release) when publishing new versions. The process is initiated upon merging commits to the `main`- [Node.JS Cloud Service Client](#nodejs-cloud-service-client)
+- [Node.JS Cloud Service Client](#nodejs-cloud-service-client)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Axios Usage](#axios-usage)
+    - [Fetch Usage](#fetch-usage)
+    - [Additional Exports](#additional-exports)
+  - [Options](#options)
+    - [Client Options](#client-options)
+    - [Request Options](#request-options)
+  - [Response](#response)
+  - [Request Retry](#request-retry)
+    - [Retry-After Header](#retry-after-header)
+    - [Example Retry Strategies](#example-retry-strategies)
+    - [Built-in Retry Strategies](#built-in-retry-strategies)
+  - [Cookies](#cookies)
+  - [Logging](#logging)
+    - [Set a Log Level](#set-a-log-level)
+    - [Provide a Custom Logger](#provide-a-custom-logger)
+  - [Examples](#examples)
+- [Releasing](#releasing)
+- [Contributing](#contributing)
+- [Licensing](#licensing)
 
-* `BREAKING-RELEASE:`
-  * Increments the `major` version number (i.e. 1.2.3 would become 2.0.0)
-* `FEATURE-RELEASE:`
-  * Increments the `minor` version number (i.e. 1.2.3 would become 1.3.0)
-* `BUGFIX-RELEASE:`
-  * Increments the `patch` version number (i.e. 1.2.3 would become 1.2.4)
+PRs whose messages do not meet semantic-release's format will not generate a new release.
 
-PRs whose messages do not meet this format will _not_ generate a new release.
-
-Release notes are generated based on semantic-release's [eslint](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-eslint) preset. Follow the guidelines
-in the preset's documentation to include commit messages in a release's notes.
-
-As a quick example, the following illustrates a commit that will be included as a bug fix in the release notes:
-
-```
-Fix: Fixed in issue with the client (fixes #1234)
-
-This can be a longer description of what the issue fixes.
-```
+Release notes are generated based on git commit messages. Release notes will appear in CHANGELOG.md.
 
 # Contributing
 
