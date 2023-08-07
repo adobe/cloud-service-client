@@ -193,6 +193,8 @@ delay multiple and wait 5 seconds.
 
 This can still be overridden through the `shouldRetry` method, which will receive the server's `Retry-After` value as the default delay.
 
+On subsequent retries, the client will fall back to its default behavior if the server does not provide additional `Retry-After` headers.
+
 ### Example Retry Strategies
 
 The following client will retry a request up to 5 times if the response code is `404`:
