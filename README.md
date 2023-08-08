@@ -14,7 +14,10 @@ wait exponentially longer between each attempt.
 * Can be configured to handle Set-Cookie header when provided by servers. The client will store these cookies in its own jar and use them in
 subsequent requests.
 
+## Contents
+
 - [Node.JS Cloud Service Client](#nodejs-cloud-service-client)
+  - [Contents](#contents)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Axios Usage](#axios-usage)
@@ -332,29 +335,14 @@ See the library's [end-to-end contract tests](./e2e/all-methods.test.js) for var
 
 # Releasing
 
-This module uses [semantic-release](https://github.com/semantic-release/semantic-release) when publishing new versions. The process is initiated upon merging commits to the `main`- [Node.JS Cloud Service Client](#nodejs-cloud-service-client)
-- [Node.JS Cloud Service Client](#nodejs-cloud-service-client)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Axios Usage](#axios-usage)
-    - [Fetch Usage](#fetch-usage)
-    - [Additional Exports](#additional-exports)
-  - [Options](#options)
-    - [Client Options](#client-options)
-    - [Request Options](#request-options)
-  - [Response](#response)
-  - [Request Retry](#request-retry)
-    - [Retry-After Header](#retry-after-header)
-    - [Example Retry Strategies](#example-retry-strategies)
-    - [Built-in Retry Strategies](#built-in-retry-strategies)
-  - [Cookies](#cookies)
-  - [Logging](#logging)
-    - [Set a Log Level](#set-a-log-level)
-    - [Provide a Custom Logger](#provide-a-custom-logger)
-  - [Examples](#examples)
-- [Releasing](#releasing)
-- [Contributing](#contributing)
-- [Licensing](#licensing)
+This module uses [semantic-release](https://github.com/semantic-release/semantic-release) when publishing new versions. The process is initiated upon merging commits to the `main` branch. Review semantic-release's documentation for full details, but the most commonly used conventions are:
+
+* `feat:` for non-breaking releases containing new features. This will increment the minor version number. Example:
+  * `feat: <message describing changes>`
+  * Assuming the library's current version is `1.2.1`, a commit with a message similar to the above would trigger a new release whose version number would be `1.3.0`.
+* `fix:` for non-breaking releases containing bug fixes. This will increment the build version number. Example:
+  * `fix: <message describing changes>`
+  * Assuming the library's current version is `1.2.1`, a commit with a message similar to the above would trigger a new release whose version number would be `1.2.2`.
 
 PRs whose messages do not meet semantic-release's format will not generate a new release.
 
