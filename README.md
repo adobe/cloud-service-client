@@ -193,7 +193,7 @@ The client will extend the HTTP response provided by the underlying HTTP library
 could not be determined.
 * {object} `headers`: Simple object whose keys are header names and values are header values. These are the HTTP headers that were provided in the response.
 * {object} `options`: The options that were provided to the client when initiating the request. The object will have an `cloudClient` property (regardless of whether one was initially provided) with the following additional properties added to it:
-  * {Array<object>} `retryResponses`: If the request was retried, a list of each response, in order, that resulted in a retry. Each item in the list will include all the items included in this section for the response that was retried.
+  * {Array&lt;object&gt;} `retryResponses`: If the request was retried, a list of each response, in order, that resulted in a retry. Each item in the list will include all the items included in this section for the response that was retried.
   * {number} `retries`: The number of retries that were made for before providing a response.
   * {number} `retryWait`: The amount of time, in milliseconds, that the client spent waiting between retries before providing a response.
   * {number} `startTime`: Unix timestamp of the time when the request was initiated.
