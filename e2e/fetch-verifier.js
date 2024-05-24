@@ -61,7 +61,6 @@ class FetchVerifier extends Verifier {
 
   /**
    * Does the work of sending a request with fetch, given axios-like options.
-   *
    * @param {*} requestFetch Fetch function to use to send request.
    * @param {string} url URL of the request to send.
    * @param {*} body Body to use in the request. Will be stringified before sending.
